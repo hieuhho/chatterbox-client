@@ -1,5 +1,5 @@
 body {
-    background: #eee;
+    background-image: url(https://avatars0.githubusercontent.com/u/7613067?s=460&u=8f9aa97dedd074c3f5010393cd662b072e4762c3&v=4);
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
@@ -57,7 +57,9 @@ form input[type=text] {
     width: 70%;
     font-size: 12px;
     padding: 5px;
+    /* text-decoration: none; */
 }
+
 
 .chat {
     padding: 5px;
@@ -67,6 +69,9 @@ form input[type=text] {
 
 .chat .username {
     font-weight: 800;
+}
+.chat .username:hover {
+    cursor: pointer;
 }
 
 .chat:hover {

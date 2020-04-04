@@ -10,28 +10,35 @@ var RoomsView = {
   render: function() {
     $(".chat").remove();
 
-    console.log(RoomsView.$select.val())
-
-    if (RoomsView.$select.val() === 'lobby'){
-      MessagesView.render()
+    if (RoomsView.$select.val() === 'All') {
+      MessagesView.render();
       return;
     }
 
-    App.fetch(function(data){
+    App.fetch(function(data) {
       for (elem of data.results){
         if (elem.roomname === RoomsView.$select.val()) {
-          message = MessageView.format(elem.username, elem.text);
+          let username = elem.username;
+          if (username) {
+            username = username.replace(/[^a-zA-Z\s]+/gi, '');
+          }
+          let message = {
+            username: username,
+            text: elem.text
+          };
+          message = $(MessageView.render(message));
           $(message).appendTo('#chats');
         }
       }
-    })
+      Friends.addFriend();
+    });
   },
 
   addRoom: function() {
     let roomName = prompt('please enter a room name');
 
     if (roomName) {
-      let $roomName = $('<option class="roomName">' + roomName + '</option>')
+      let $roomName = $('<option class="roomName">' + roomName + '</option>');
       $roomName.appendTo(RoomsView.$select);
     }
   }

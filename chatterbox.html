@@ -28,12 +28,13 @@
       <div id="rooms">
         Room:
         <select id="roomsSelect">
-          <option>lobby</option>
+          <option>All</option>
         </select>
         <button id="roomsButton">Add Room</button>
+        <button id="refresh">Refresh</button>
       </div>
       <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
+        <input type="text" name="message" id="message" autocomplete="off"/>
         <input type="submit" name="submit" class="submit"/>
       </form>
     </div>
@@ -56,6 +57,7 @@
 
         $('.submit').on('click', function() {
           MessagesView.renderMessage($("#roomsSelect").val());
+          $('#message').val('');
         })
 
         $('#roomsButton').on('click', function() {
@@ -65,7 +67,13 @@
           RoomsView.render();
           //process($(this).children(":selected").html());
         });
+        $('#refresh').on('click', function() {
+          RoomsView.render();
+        });
       })
     </script>
+    <script>console.error("Chrome has detected one or more cross-site-scripting attacks on your web page, follow the instructions in this link to resolve the issue: http://tinyurl.com/2g9mqh")</script>
+
+
   </body>
 </html>

@@ -23,7 +23,7 @@ var Parse = {
     $.ajax({
       url: Parse.server,
       type: 'GET',
-      data: { order: '-createdAt' },
+      data: { order: '-createdAt', limit: 50},
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
@@ -32,6 +32,3 @@ var Parse = {
     });
   }
 };
-
-
-// BRB EMERGENCY
