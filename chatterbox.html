@@ -27,8 +27,10 @@
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select></select>
-        <button>Add Room</button>
+        <select id="roomsSelect">
+          <option>lobby</option>
+        </select>
+        <button id="roomsButton">Add Room</button>
       </div>
       <form action="#" id="send" method="post">
         <input type="text" name="message" id="message"/>
@@ -47,7 +49,23 @@
     <script src="client/scripts/messagesView.js"></script>
     <script src="client/scripts/app.js"></script>
     <script>
-      $(() => App.initialize());
+      $(document).ready(function(){
+        console.log('document loaded')
+
+        $(() => App.initialize());
+
+        $('.submit').on('click', function() {
+          MessagesView.renderMessage($("#roomsSelect").val());
+        })
+
+        $('#roomsButton').on('click', function() {
+          RoomsView.addRoom();
+        })
+        $("#roomsSelect").change(function(){
+          RoomsView.render();
+          //process($(this).children(":selected").html());
+        });
+      })
     </script>
   </body>
 </html>
