@@ -3,6 +3,16 @@ body {
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
+    animation: spin 1.2s linear 1;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotateY(0);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
 }
 
 #main, #chats {
@@ -10,7 +20,7 @@ body {
     margin: auto;
     text-align: left;
     background: white;
-    padding: 50px 60px;
+    padding: 5px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
 }
@@ -18,12 +28,14 @@ body {
 #main h1 {
     margin-top: 0;
     font-size: 35px;
+    font-family: monospace;
     margin-bottom: 5px;
     padding: 5px;
+    color: lime;
 }
 
 #main h1 span {
-    font-style:italic;
+    font-style: italic;
 }
 
 #main ul {
@@ -57,25 +69,38 @@ form input[type=text] {
     width: 70%;
     font-size: 12px;
     padding: 5px;
-    /* text-decoration: none; */
 }
 
 
 .chat {
-    padding: 5px;
+    /* padding: 5px;
     margin-bottom: 5px;
-    background-color: #eee;
+    background-color: #eee; */
+    background-color: #03A9F4;
+    color: white;
+    text-align: left;
+
+    float: center;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    margin: 5px auto 0px auto;
+    padding: 20px 10px;
+    word-wrap: break-word;
 }
 
 .chat .username {
-    font-weight: 800;
+    /* color: white; */
+    font-weight: bolder;
+    padding: 0 0 10px 0;
 }
 .chat .username:hover {
     cursor: pointer;
+    color: plum;
 }
 
 .chat:hover {
-    background-color: #ddd;
+    background-color:  rgb(8, 141, 202);
 }
 
 .spinner {
@@ -85,11 +110,14 @@ form input[type=text] {
 }
 
 .spinner img {
+    position: relative;
     padding: 10px;
+    width: 45%;
+    float: right;
 }
 
 .friend {
-    color: #fff;
-    background-color: #0090da;
+    color: greenyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

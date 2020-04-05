@@ -36,7 +36,7 @@ var App = {
   },
 
   stopSpinner: function() {
-    App.$spinner.fadeOut('fast');
+    App.$spinner.fadeOut('slow');
     FormView.setStatus(false);
   }
 };

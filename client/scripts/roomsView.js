@@ -9,6 +9,7 @@ var RoomsView = {
 
   render: function() {
     $(".chat").remove();
+    App.startSpinner();
 
     if (RoomsView.$select.val() === 'All') {
       MessagesView.render();
@@ -31,6 +32,7 @@ var RoomsView = {
         }
       }
       Friends.addFriend();
+      App.stopSpinner();
     });
   },
 
