@@ -41,7 +41,7 @@ npm start
 
 ## Authors
 
-* **Hieu Ho** - *Initial work* - [AmiraVomir](https://github.com/AmiraVomir)
+* **Hieu Ho** - *Initial work* - [hieuhho](https://github.com/hieuhho)
 
 ## License
 
